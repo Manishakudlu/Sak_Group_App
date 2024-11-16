@@ -4,6 +4,11 @@ pipeline {
         maven 'maven'
     }
     stages {
+        stage('clone'){
+            steps{
+                git branch: 'main',url: 'https://github.com/Manishakudlu/Sak_Group_App'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean package -DskipTests'
